@@ -11,8 +11,8 @@ and an external stylesheet — a home page and a projects catalogue page.
 - `assets/projects/` — project screenshots
 
 ## Live deployments
-- GitHub Pages: https://Godscop.github.io/REPO-NAME/
-- Vercel: https://PROJECT-NAME.vercel.app/
+- GitHub Pages: https://Godscop.github.io/My_Portfolio/
+- Vercel: https://my-portfolio-teal-phi-34.vercel.app/
 
 *(Replace `REPO-NAME` / `PROJECT-NAME` with the real links once deployed.)*
 
