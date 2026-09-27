@@ -16,13 +16,30 @@
 <header class="site-header">
     <div class="wrap header-inner">
         <a class="wordmark" href="index.html#top">Carl Peters</a>
-        <nav aria-label="Primary">
-            <ul>
-                <li><a href="index.html#top">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="header-right">
+          <nav aria-label="Primary">
+             <ul>
+                 <li><a href="index.html#top">Home</a></li>
+                 <li><a href="projects.html">Projects</a></li>
+                 <li><a href="index.html#contact">Contact</a></li>
+             </ul>
+          </nav>
+          <div class="rate-me">
+              <p class="rate-me-label">Rate your experience</p>
+              <div class="star-rating">
+                  <input type="radio" id="star5" name="rating" value="5" />
+                  <label for="star5" title="5 stars">&#9733;</label>
+                  <input type="radio" id="star4" name="rating" value="4" />
+                  <label for="star4" title="4 stars">&#9733;</label>
+                  <input type="radio" id="star3" name="rating" value="3" />
+                  <label for="star3" title="3 stars">&#9733;</label>
+                  <input type="radio" id="star2" name="rating" value="2" />
+                  <label for="star2" title="2 stars">&#9733;</label>
+                  <input type="radio" id="star1" name="rating" value="1" />
+                  <label for="star1" title="1 star">&#9733;</label>
+              </div>
+         </div>
+        </div>
     </div>
 </header>
 
@@ -32,27 +49,125 @@
         <p class="hero-lede">A running catalogue of things i've built - coursework, freelancework, personal experiments. New entries added as they're finished</p>
     </section>
 
+    <section id="skills-detail" class="skills-detail wrap">
+        <h2>Skills</h2>
+        <ul class="skill-bars">
+            <li class="skill-row">
+                <div class="skill-row-top">
+                    <span class="skill-name">HTML5</span>
+                    <span class="skill-level">Confident</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill lvl-90"></div></div>
+            </li>
+            <li class="skill-row">
+                <div class="skill-row-top">
+                    <span class="skill-name">CSS3</span>
+                    <span class="skill-level">Confident</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill lvl-85"></div></div>
+            </li>
+            <li class="skill-row">
+                <div class="skill-row-top">
+                    <span class="skill-name">Responsive Design</span>
+                    <span class="skill-level">Comfortable</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill lvl-70"></div></div>
+            </li>
+            <li class="skill-row">
+                <div class="skill-row-top">
+                    <span class="skill-name">Git &amp; Github</span>
+                    <span class="skill-level">Comfortable</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill lvl-65"></div></div>
+            </li>
+            <li class="skill-row">
+                <div class="skill-row-top">
+                    <span class="skill-name">Javascript</span>
+                    <span class="skill-level">Beginner</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill lvl-25"></div></div>
+            </li>
+            <li class="skill-row">
+                <div class="skill-row-top">
+                    <span class="skill-name">Freelance Writing</span>
+                    <span class="skill-level">Confident</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill lvl-80"></div></div>
+            </li>
+        </ul>
+    </section>
+
     <section class="catalog wrap" aria-label="Project catalogue">
-        <div class="catalogue-grid">
+        <div class="catalog-grid">
             <article class="project-card">
                 <div class="project-thumb">
-                    <img src="assets/projects/project1.png" alt="Screenshot of Pennypilot" />
+                    <img src="assets/projects/project1.png" alt="PennyPilot app concept screen showing smart goals,insights and account creation" />
                 </div>
-                <h2><b>Pennypilot</b></h2>
-                <p class="project-tag">Personal financial management asisstance and accounting.</p>
+                <div class="project-body">
+                    <h3>PennyPilot</h3>
+                    <p class="project-desc">A personal finance app conceptfor people with irregular income - smart goals, clear spending insights and early warnings before things go wrong.</p>
+                    <ul class="skill-tags project-tech">
+                        <li>Figma</li>
+                        <li>UI/UX Design</li>
+                    </ul>
+                    <a class="project-link" href="https://www.figma.com/proto/G8905jMgBWMLfrNyMNq7b2/figma-capstone?node-id=93-205&t=XHLkk2QQc2pD6pLN-1" target="_blank" rel="noopener noreferrer">View prototype</a>
+                </div>
             </article>
+
             <article class="project-card">
                 <div class="project-thumb">
-                    <img src="assets/projects/project2.png" alt="Apex Trainer" />
+                    <img src="assets/projects/project2.png" alt="Apex Trainer dashboard showing workout stats and quick actions" />
                 </div>
-                <h2><b>Apex Trainer</b></h2>
-                <p class="project-tag">Personal workout traker targetting anime enthusiasts.</p>
+                <div class="project-body">
+                    <h3>Apex Trainer</h3>
+                    <p class="project-desc">A personal workout tracker built for anime enthusiasts - logging workouts, tracking recovery, and body stats from a dashboard.</p>
+                    <ul class="skill-tags project-tech">
+                        <li>Python</li>
+                        <li>Javascript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                    <div class="project-links">
+                        <a class="project-link" href="https://github.com/Godscop/apex-trainer" target="_blank" rel="noopener noreferrer">View code</a>
+                        <a class="project-link" href="https://apex-trainer.onrender.com/" target="_blank" rel="noopener noreferrer">Live demo</a>
+                    </div>
+                </div>
             </article>
+
             <article class="project-card">
-                <div class="project-thumb">
+                <div class="project-thumb"></div>
+                <div class="project-body">
+                    <h3>This Portfolio</h3>
+                    <p class="project-desc">The site you're looking at right now - built from scratch for CSN 1101, from semantic HTML through to the interactive pieces on this page.</p>
+                    <ul class="skill-tags project-tech">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>Javascript</li>
+                    </ul>
+                    <a class="project-link" href="https://github.com/Godscop/My_Portfolio" target="_blank" rel="noopener noreferrer">View code</a>
                 </div>
-                <h3>Project title</h3>
-                <p class="project-tag">Coming soon</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="services" class="services wrap">
+        <h2>Services</h2>
+        <div class="services-grid">
+            <article class="service-card">
+                <h3>Website Design &amp; Build</h3>
+                <p>Responsive, semantic HTML/CSS sites - portfolios, landing pages, and small business sites.</p>
+            </article>
+            <article class="service-card">
+                <h3>UI/UX Prototyping</h3>
+                <p>Clickable Figma prototypes for apps and websites, from wireframe to polished screens.</p>
+            </article>
+            <article class="service-card">
+                <h3>Data Entry</h3>
+                <p>Accurate, fast-turnaround data entry and spreadsheet organisation.</p>
+            </article>
+            <article class="service-card">
+                <h3>Content Writing</h3>
+                <p>Clear, well-researched online writing - articles, product copy, and web content.</p>
             </article>
         </div>
     </section>
