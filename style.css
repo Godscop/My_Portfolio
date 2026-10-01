@@ -142,6 +142,73 @@ nav a:focus-visible {color: var(--gold); }
     outline-offset: 2px;
 }
 
+.star-rating input:disabled ~ label{
+    cursor: not-allowed;
+    opacity: 0.35;
+}
+
+/* Toast popup - center of screen */
+.toast{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 90vw;
+    width: max-content;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--gold-deep);
+    color: var(--text);
+    padding: 1rem 1.75rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 1000;
+}
+.toast.show{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+.toast.fly-out{
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx, 0px)), calc(-50% + var(dy, 0px))) scale(0.15);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Confetti */
+.confetti-piece{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 7px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1001;
+    animation: confetti-pop cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes confetti-pop {
+    0%{
+        transform: translate(-50%, -50%) scale(0.2);
+        opacity: 0;
+    }
+    12%{opacity: 1;}
+    100%{
+        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(var(--rotation));
+        opacity: 0;
+    }
+}
+
+.rate-message {
+    margin: 0.4rem 0 0;
+    font-size: 0.75rem;
+    color: var(--gold-bright);
+    min-height: 1rem;
+}
+
 /* Hero */
 .hero {
     display: flex;

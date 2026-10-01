@@ -19,9 +19,9 @@
         <div class="header-right">
           <nav aria-label="Primary">
              <ul>
-                 <li><a href="index.html#top">Home</a></li>
-                 <li><a href="projects.html">Projects</a></li>
-                 <li><a href="index.html#contact">Contact</a></li>
+                 <li><a class="nav-btn" href="index.html#top">Home</a></li>
+                 <li><a class="nav-btn" href="projects.html">Projects</a></li>
+                 <li><a class="nav-btn" href="index.html#contact">Contact</a></li>
              </ul>
           </nav>
           <div class="rate-me">
@@ -38,6 +38,7 @@
                   <input type="radio" id="star1" name="rating" value="1" />
                   <label for="star1" title="1 star">&#9733;</label>
               </div>
+              <p class="rate-message" id="rate-message" aria-live="polite"></p>
          </div>
         </div>
     </div>
@@ -177,12 +178,13 @@
     <div class="wrap footer-inner">
         <h2>Contact</h2>
         <ul class="contact-list">
-            <li><a href="malito:adhiscarl@gmail.com">adhiscarl@gmail.com</a></li>
+            <li><a href="mailto:adhiscarl@gmail.com">adhiscarl@gmail.com</a></li>
             <li><a href="https://github.com/Godscop" target="_blank" rel="noopener noreferrer">github.com/Godscop</a></li>
         </ul>
         <p class="fine-print">&copy; 2026 All rights reserved<br>Carl Peters</p>
     </div>
 </footer>
-
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="scripts.js"></script>
 </body>
 </html>
