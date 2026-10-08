@@ -531,6 +531,55 @@ h2{
     margin: 0;
 }
 
+
+.weather-chip {
+  margin: 1rem auto 0;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Live GitHub repos */
+.github-repos {
+  padding: 2.5rem 0 3rem;
+  border-top: 1px solid var(--rule);
+}
+.repo-status {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.repo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.repo-card {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--surface);
+  padding: 1.1rem 1.25rem;
+}
+.repo-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin: 0 0 0.4rem;
+  color: var(--gold-bright);
+}
+.repo-card p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem;
+}
+.repo-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html{scroll-behavior: auto; }
     *{ transition: none !important; }
@@ -539,8 +588,9 @@ h2{
 /* Tablet and up: hero side by side*/
 @media (min-width: 40em) {
     .hero-photo img{width:210px; height:210px;}
-    .catalog-grid {grid-template-columns: repreat(2, 1fr); }
-    .services-grid {grid-template-columns: repreat(2, 1fr); }
+    .catalog-grid {grid-template-columns: repeat(2, 1fr); }
+    .services-grid {grid-template-columns: repeat(2, 1fr); }
+    .repo-grid {grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Desktop */
@@ -548,4 +598,5 @@ h2{
     .hero-photo img{width: 240px; height: 240px; }
     .catalog-grid{ grid-template-columns: repeat(3, 1fr); }
     .services-grid{ grid-template-columns: repeat(3, 1fr); }
+    .repo-grid{ grid-template-columns: repeat(3, 1fr); }
 }

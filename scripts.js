@@ -114,3 +114,91 @@ starInputs.forEach((input) => {
     showToast(`Thanks for the ${stars}-star rating!`, 5000, "assets/audio/thanks.mp3", false);
   });
 });
+
+
+/* ---------- Live GitHub repos (projects.html) ---------- */
+const repoList = document.getElementById("repo-list");
+const repoStatus = document.getElementById("repo-status");
+
+async function loadRepos() {
+  if (!repoList) return; // this section doesn't exist on this page
+
+  try {
+    const response = await fetch(
+      "https://api.github.com/users/Godscop/repos?sort=updated&per_page=6"
+    );
+
+    if (!response.ok) {
+      throw new Error("GitHub API responded with " + response.status);
+    }
+
+    const repos = await response.json();
+    repoStatus.hidden = true;
+
+    repos.forEach((repo) => {
+      const card = document.createElement("article");
+      card.className = "repo-card";
+
+      const name = document.createElement("h3");
+      name.textContent = repo.name;
+
+      const desc = document.createElement("p");
+      desc.textContent = repo.description || "No description provided.";
+
+      const meta = document.createElement("p");
+      meta.className = "repo-meta";
+      meta.textContent = (repo.language || "—") + " · ★ " + repo.stargazers_count;
+
+      const link = document.createElement("a");
+      link.href = repo.html_url;
+      link.textContent = "View repository";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.className = "project-link";
+
+      card.appendChild(name);
+      card.appendChild(desc);
+      card.appendChild(meta);
+      card.appendChild(link);
+      repoList.appendChild(card);
+    });
+  } catch (error) {
+    repoStatus.textContent = "Couldn't load repositories right now — check back later.";
+  }
+}
+
+loadRepos();
+
+/* ---------- Live weather (index.html) ---------- */
+const weatherStatus = document.getElementById("weather-status");
+
+const weatherDescriptions = {
+  0: "Clear sky", 1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast",
+  45: "Foggy", 48: "Foggy", 51: "Light drizzle", 61: "Light rain",
+  63: "Rain", 65: "Heavy rain", 80: "Rain showers", 95: "Thunderstorm",
+};
+
+async function loadWeather() {
+  if (!weatherStatus) return; // this element doesn't exist on this page
+
+  try {
+    const response = await fetch(
+      "https://api.open-meteo.com/v1/forecast?latitude=-1.2921&longitude=36.8219&current_weather=true"
+    );
+
+    if (!response.ok) {
+      throw new Error("Weather API responded with " + response.status);
+    }
+
+    const data = await response.json();
+    const temp = Math.round(data.current_weather.temperature);
+    const code = data.current_weather.weathercode;
+    const description = weatherDescriptions[code] || "current conditions";
+
+    weatherStatus.textContent = `Nairobi right now: ${temp}°C, ${description}`;
+  } catch (error) {
+    weatherStatus.textContent = "Weather unavailable right now.";
+  }
+}
+
+loadWeather();
